@@ -16,7 +16,3 @@ export const TeamMemberBio: TeamMemberBioProps = ({ bio }) => {
     </div>
   )
 }
-
-// export function TeamMemberBio({ bio }: TeamMemberBioProps) {
-//   return <p>{bio}</p>
-// }
