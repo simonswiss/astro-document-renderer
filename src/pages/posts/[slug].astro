@@ -26,6 +26,11 @@ export async function getStaticPaths() {
 <Layout title={post.title}>
   <h1>{post.title}</h1>
 
+  <!-- This doesn't work — the client:load prop is not respected -->
+  <DocumentRenderer client:load document={post.content} componentBlocks={{
+    teamMemberBio: TeamMemberBio
+  }} />
+  
   <!-- 
     This works, but the `componentBlocks` need to be passed to 
     the component definition directly.
@@ -34,8 +39,4 @@ export async function getStaticPaths() {
   -->
   <AstroDocumentRenderer client:load document={post.content} />
 
-  <!-- This doesn't work — the client:load prop is not respected -->
-  <DocumentRenderer client:load document={post.content} componentBlocks={{
-    teamMemberBio: TeamMemberBio
-  }} />
 </Layout>
